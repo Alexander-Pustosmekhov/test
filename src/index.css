@@ -9,8 +9,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #381ead; */
-  background-color: #1e93ad;
+  background: rgb(0, 212, 255);
+  background: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(120, 159, 207, 1) 42%,
+    rgba(8, 114, 214, 1) 100%
+  );
 }
 
 code {

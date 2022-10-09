@@ -1,7 +1,6 @@
 import Container from './Container';
-import Table from './Table';
-import EnhancedTable from './Table/TableMUI';
-import { getAllSongs } from 'service/songsApi';
+import EnhancedTable from './Table/Table';
+import Header from './Header';
 import Footer from './Footer';
 
 export const App = () => {
@@ -11,8 +10,9 @@ export const App = () => {
   // console.log(allSongs);
   return (
     <>
+      <Header />
       <EnhancedTable />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
   // <Table />

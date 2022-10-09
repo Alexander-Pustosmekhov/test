@@ -1,0 +1,32 @@
+.Header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  padding: 20px 40px;
+  /* background-color: rgb(47, 47, 199); */
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 9, 121, 1) 75%,
+    rgba(2, 0, 36, 1) 100%
+  );
+
+  border-bottom: 1px solid blue;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+  height: 60px;
+  background-color: rgb(7, 4, 39);
+  margin-right: 30px;
+}
+
+.headerText {
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #ffffff;
+}

@@ -14,8 +14,34 @@
 .filter {
   width: 250px;
   padding: 40px;
-  background-color: rgb(206, 200, 24);
+  background-color: rgb(34, 120, 178);
+  color: #ffffff;
   box-shadow: 0px 4px 15px rgb(34, 120, 178);
+}
+
+.filtertText {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.filterNameSelect {
+  margin-bottom: 5px;
+}
+
+.filterButton {
+  width: 150px;
+  margin-top: 20px;
+  color: inherit;
+  background-color: inherit;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+}
+
+.filterButton:hover,
+.filterButton:focus {
+  border-color: rgb(47, 47, 199);
+  color: rgb(47, 47, 199);
 }
 
 .pagination {
@@ -60,6 +86,16 @@
   display: block;
   width: 100%;
   background-color: inherit;
+  border-color: #a9c6c9;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.select:focus,
+.select:hover {
+  border-color: rgb(47, 47, 199);
+  color: rgb(47, 47, 199);
 }
 
 .tablePlaylist {
@@ -72,13 +108,18 @@
 }
 
 /* Style Table   Style Table   Style Table   Style Table   Style Table*/
+.loader {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
 
 .tableSong {
   display: flex;
   justify-content: space-between;
   align-items: start;
   width: 1200px;
-  margin: 100px auto 0 auto;
+  margin: 170px auto 100px auto;
 }
 
 .tableBox {
@@ -111,13 +152,15 @@
 }
 
 .tableHead {
-  background-color: rgb(206, 200, 24);
+  /* background-color: rgb(206, 200, 24); */
+  background-color: rgb(47, 47, 199);
 }
 
 .tableHeadCell {
   border: none;
   border: 1px solid gray;
   text-align: start;
+  width: 200px;
 }
 
 .tableSortLabel {
@@ -125,5 +168,6 @@
 
 .tablePagination {
   border: 1px solid gray;
-  background-color: rgb(206, 200, 24);
+  /* background-color: rgb(206, 200, 24); */
+  background-color: rgb(47, 47, 199);
 }
