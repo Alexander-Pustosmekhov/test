@@ -139,7 +139,7 @@ export default function EnhancedTable() {
   const [artist, setArtist] = useState('all');
   const [genre, setGenre] = useState('all');
   const [year, setYear] = useState('all');
-  const [allSongs, setAllSongs] = useState(null);
+  const [allSongs, setAllSongs] = useState([]);
   const [rows, setRows] = useState([]);
   const [artists, setArtists] = useState([]);
   const [genres, setGenres] = useState([]);
@@ -166,7 +166,7 @@ export default function EnhancedTable() {
   }, [artist, genre, year]);
 
   useEffect(() => {
-    if (allSongs !== null) {
+    if (allSongs?.length) {
       setRows(
         allSongs.map(({ artist, song, genre, year }) => {
           return createData(artist, song, genre, year);
