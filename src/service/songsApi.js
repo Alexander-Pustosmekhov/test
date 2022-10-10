@@ -12,7 +12,7 @@ export const getAllSongs = async (
       url: '/songs',
       params: { artist, genre, year },
     });
-    return response.data;
+    return response.data.rows;
   } catch (error) {
     console.log(error);
   }

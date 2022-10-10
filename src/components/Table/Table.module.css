@@ -1,6 +1,6 @@
 .Table {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 1200px;
   margin: 0 auto;
   margin-top: 100px;
@@ -46,7 +46,6 @@
 
 .pagination {
   display: flex;
-  /* justify-content: space-between; */
   width: 100px;
   margin: 0 auto;
 }
@@ -72,10 +71,6 @@
   background-color: gainsboro;
   border: 1px solid gray;
   border-radius: 50%;
-}
-
-.btnChangePage {
-  composes: pageBtn;
 }
 
 .amountTracksList {
@@ -107,7 +102,6 @@
   text-align: start;
 }
 
-/* Style Table   Style Table   Style Table   Style Table   Style Table*/
 .loader {
   background-color: red;
   width: 100px;
@@ -116,7 +110,7 @@
 
 .tableSong {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: start;
   width: 1200px;
   margin: 170px auto 100px auto;
@@ -148,7 +142,6 @@
 }
 
 .tableHead {
-  /* background-color: rgb(206, 200, 24); */
   background-color: rgb(47, 47, 199);
 }
 
@@ -161,6 +154,5 @@
 
 .tablePagination {
   border: 1px solid gray;
-  /* background-color: rgb(206, 200, 24); */
   background-color: rgb(47, 47, 199);
 }
