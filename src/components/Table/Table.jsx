@@ -154,13 +154,18 @@ export default function EnhancedTable() {
   };
 
   useEffect(() => {
+    if (allSongs) {
+      const { artists, genres, years } = getFilters(allSongs);
+      setArtists(artists);
+      setGenres(genres);
+      setYears(years);
+    }
+  }, [allSongs]);
+
+  useEffect(() => {
     getAllSongs(artist, genre, year)
       .then(data => {
         setAllSongs(data);
-        const { artists, genres, years } = getFilters(data);
-        setArtists(artists);
-        setGenres(genres);
-        setYears(years);
       })
       .catch(error => console.log(error));
   }, [artist, genre, year]);
@@ -250,48 +255,46 @@ export default function EnhancedTable() {
 
                     return (
                       <>
-                        {rows.length && (
-                          <TableRow
-                            className={s.tableRow}
-                            hover
-                            aria-checked={isItemSelected}
-                            tabIndex={-1}
-                            key={row.artist}
-                            selected={isItemSelected}
+                        <TableRow
+                          className={s.tableRow}
+                          hover
+                          aria-checked={isItemSelected}
+                          tabIndex={-1}
+                          key={row.artist}
+                          selected={isItemSelected}
+                        >
+                          <TableCell
+                            sx={{ color: '#ffffff', padding: '16px' }}
+                            className={s.tableCell}
+                            component="th"
+                            id={labelId}
+                            scope="row"
+                            padding="none"
                           >
-                            <TableCell
-                              sx={{ color: '#ffffff', padding: '16px' }}
-                              className={s.tableCell}
-                              component="th"
-                              id={labelId}
-                              scope="row"
-                              padding="none"
-                            >
-                              {row.artist}
-                            </TableCell>
-                            <TableCell
-                              sx={{ color: '#ffffff', textAlign: 'start' }}
-                              className={s.tableCell}
-                              align="right"
-                            >
-                              {row.song}
-                            </TableCell>
-                            <TableCell
-                              sx={{ color: '#ffffff', textAlign: 'start' }}
-                              className={s.tableCell}
-                              align="right"
-                            >
-                              {row.genre}
-                            </TableCell>
-                            <TableCell
-                              sx={{ color: '#ffffff', textAlign: 'start' }}
-                              className={s.tableCell}
-                              align="right"
-                            >
-                              {row.year}
-                            </TableCell>
-                          </TableRow>
-                        )}
+                            {row.artist}
+                          </TableCell>
+                          <TableCell
+                            sx={{ color: '#ffffff', textAlign: 'start' }}
+                            className={s.tableCell}
+                            align="right"
+                          >
+                            {row.song}
+                          </TableCell>
+                          <TableCell
+                            sx={{ color: '#ffffff', textAlign: 'start' }}
+                            className={s.tableCell}
+                            align="right"
+                          >
+                            {row.genre}
+                          </TableCell>
+                          <TableCell
+                            sx={{ color: '#ffffff', textAlign: 'start' }}
+                            className={s.tableCell}
+                            align="right"
+                          >
+                            {row.year}
+                          </TableCell>
+                        </TableRow>
                       </>
                     );
                   })}
