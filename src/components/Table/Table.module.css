@@ -147,10 +147,6 @@
   text-align: start;
 }
 
-.wtf {
-  background-color: red;
-}
-
 .tableHead {
   /* background-color: rgb(206, 200, 24); */
   background-color: rgb(47, 47, 199);
@@ -161,9 +157,6 @@
   border: 1px solid gray;
   text-align: start;
   width: 200px;
-}
-
-.tableSortLabel {
 }
 
 .tablePagination {
