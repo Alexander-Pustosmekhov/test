@@ -95,7 +95,7 @@ function EnhancedTableHead(props) {
           <TableCell
             sx={{ color: '#ffffff', textAlign: 'center', padding: '16px' }}
             className={s.tableHeadCell}
-            key={headCell.id}
+            key={`headerCell + ${headCell.id}`}
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
@@ -254,48 +254,46 @@ export default function EnhancedTable() {
                     const labelId = `enhanced-table-checkbox-${index}`;
 
                     return (
-                      <>
-                        <TableRow
-                          className={s.tableRow}
-                          hover
-                          aria-checked={isItemSelected}
-                          tabIndex={-1}
-                          key={row.artist}
-                          selected={isItemSelected}
+                      <TableRow
+                        className={s.tableRow}
+                        hover
+                        aria-checked={isItemSelected}
+                        tabIndex={-1}
+                        key={index}
+                        selected={isItemSelected}
+                      >
+                        <TableCell
+                          sx={{ color: '#ffffff', padding: '16px' }}
+                          className={s.tableCell}
+                          component="th"
+                          id={labelId}
+                          scope="row"
+                          padding="none"
                         >
-                          <TableCell
-                            sx={{ color: '#ffffff', padding: '16px' }}
-                            className={s.tableCell}
-                            component="th"
-                            id={labelId}
-                            scope="row"
-                            padding="none"
-                          >
-                            {row.artist}
-                          </TableCell>
-                          <TableCell
-                            sx={{ color: '#ffffff', textAlign: 'start' }}
-                            className={s.tableCell}
-                            align="right"
-                          >
-                            {row.song}
-                          </TableCell>
-                          <TableCell
-                            sx={{ color: '#ffffff', textAlign: 'start' }}
-                            className={s.tableCell}
-                            align="right"
-                          >
-                            {row.genre}
-                          </TableCell>
-                          <TableCell
-                            sx={{ color: '#ffffff', textAlign: 'start' }}
-                            className={s.tableCell}
-                            align="right"
-                          >
-                            {row.year}
-                          </TableCell>
-                        </TableRow>
-                      </>
+                          {row.artist}
+                        </TableCell>
+                        <TableCell
+                          sx={{ color: '#ffffff', textAlign: 'start' }}
+                          className={s.tableCell}
+                          align="right"
+                        >
+                          {row.song}
+                        </TableCell>
+                        <TableCell
+                          sx={{ color: '#ffffff', textAlign: 'start' }}
+                          className={s.tableCell}
+                          align="right"
+                        >
+                          {row.genre}
+                        </TableCell>
+                        <TableCell
+                          sx={{ color: '#ffffff', textAlign: 'start' }}
+                          className={s.tableCell}
+                          align="right"
+                        >
+                          {row.year}
+                        </TableCell>
+                      </TableRow>
                     );
                   })}
                 {emptyRows > 0 && (
