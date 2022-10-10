@@ -1,6 +1,6 @@
 .Table {
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   width: 1200px;
   margin: 0 auto;
   margin-top: 100px;
@@ -99,7 +99,7 @@
 
 .tableColumn {
   width: calc(100% / 4);
-  text-align: start;
+  /* text-align: start; */
 }
 
 .loader {
@@ -110,8 +110,8 @@
 
 .tableSong {
   display: flex;
-  /* justify-content: space-between; */
-  align-items: start;
+  justify-content: space-between;
+  /* align-items: start; */
   width: 1200px;
   margin: 170px auto 100px auto;
 }
@@ -138,7 +138,7 @@
   border: none;
   border: 1px solid gray;
   width: calc(100% / 4);
-  text-align: start;
+  /* text-align: start; */
 }
 
 .tableHead {
@@ -148,7 +148,7 @@
 .tableHeadCell {
   border: none;
   border: 1px solid gray;
-  text-align: start;
+  /* text-align: start; */
   width: 200px;
 }
 
