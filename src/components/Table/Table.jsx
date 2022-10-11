@@ -239,74 +239,77 @@ export default function EnhancedTable() {
             rowCount={rows.length}
           />
           <TableContainer sx={{ height: '530px' }}>
-            <Table
-              className={s.table}
-              aria-labelledby="tableTitle"
-              size={dense ? 'small' : 'medium'}
-            >
-              <TableBody className={s.tableBody}>
-                {/* if you don't need to support IE11, you can replace the `stableSort` call with:
+            {!allSongs.length && <p className={s.loader}>Loading...</p>}
+            {allSongs.length && (
+              <Table
+                className={s.table}
+                aria-labelledby="tableTitle"
+                size={dense ? 'small' : 'medium'}
+              >
+                <TableBody className={s.tableBody}>
+                  {/* if you don't need to support IE11, you can replace the `stableSort` call with:
                  rows.slice().sort(getComparator(order, orderBy)) */}
-                {stableSort(rows, getComparator(order, orderBy))
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row, index) => {
-                    const isItemSelected = isSelected(row.artist);
-                    const labelId = `enhanced-table-checkbox-${index}`;
+                  {stableSort(rows, getComparator(order, orderBy))
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((row, index) => {
+                      const isItemSelected = isSelected(row.artist);
+                      const labelId = `enhanced-table-checkbox-${index}`;
 
-                    return (
-                      <TableRow
-                        className={s.tableRow}
-                        hover
-                        aria-checked={isItemSelected}
-                        tabIndex={-1}
-                        key={index}
-                        selected={isItemSelected}
-                      >
-                        <TableCell
-                          sx={{ color: '#ffffff', padding: '16px' }}
-                          className={s.tableCell}
-                          component="th"
-                          id={labelId}
-                          scope="row"
-                          padding="none"
+                      return (
+                        <TableRow
+                          className={s.tableRow}
+                          hover
+                          aria-checked={isItemSelected}
+                          tabIndex={-1}
+                          key={index}
+                          selected={isItemSelected}
                         >
-                          {row.artist}
-                        </TableCell>
-                        <TableCell
-                          sx={{ color: '#ffffff', textAlign: 'start' }}
-                          className={s.tableCell}
-                          align="right"
-                        >
-                          {row.song}
-                        </TableCell>
-                        <TableCell
-                          sx={{ color: '#ffffff', textAlign: 'start' }}
-                          className={s.tableCell}
-                          align="right"
-                        >
-                          {row.genre}
-                        </TableCell>
-                        <TableCell
-                          sx={{ color: '#ffffff', textAlign: 'start' }}
-                          className={s.tableCell}
-                          align="right"
-                        >
-                          {row.year}
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                {emptyRows > 0 && (
-                  <TableRow
-                    style={{
-                      height: (dense ? 33 : 53) * emptyRows,
-                    }}
-                  >
-                    <TableCell colSpan={6} />
-                  </TableRow>
-                )}
-              </TableBody>
-            </Table>
+                          <TableCell
+                            sx={{ color: '#ffffff', padding: '16px' }}
+                            className={s.tableCell}
+                            component="th"
+                            id={labelId}
+                            scope="row"
+                            padding="none"
+                          >
+                            {row.artist}
+                          </TableCell>
+                          <TableCell
+                            sx={{ color: '#ffffff', textAlign: 'start' }}
+                            className={s.tableCell}
+                            align="right"
+                          >
+                            {row.song}
+                          </TableCell>
+                          <TableCell
+                            sx={{ color: '#ffffff', textAlign: 'start' }}
+                            className={s.tableCell}
+                            align="right"
+                          >
+                            {row.genre}
+                          </TableCell>
+                          <TableCell
+                            sx={{ color: '#ffffff', textAlign: 'start' }}
+                            className={s.tableCell}
+                            align="right"
+                          >
+                            {row.year}
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  {emptyRows > 0 && (
+                    <TableRow
+                      style={{
+                        height: (dense ? 33 : 53) * emptyRows,
+                      }}
+                    >
+                      <TableCell colSpan={6} />
+                    </TableRow>
+                  )}
+                </TableBody>
+              </Table>
+            )}
           </TableContainer>
           <TablePagination
             sx={{ color: '#ffffff' }}
